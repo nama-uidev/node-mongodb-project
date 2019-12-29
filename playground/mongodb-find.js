@@ -9,9 +9,7 @@ MongoClient.connect("mongodb://localhost:27017/TodoApi", (err, client) => {
         console.log("connected");
         var db = client.db("TodoApi");
     }
-    db.collection("Users").find({
-        name: "Mithra"
-    }).toArray().then((docs) => {
+    db.collection("Users").find({}).toArray().then((docs) => {
         var docs = JSON.stringify(docs, undefined, 2);
         console.log(docs);
     });
